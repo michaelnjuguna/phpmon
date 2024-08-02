@@ -20,8 +20,8 @@ class PhpMon
             exit(1);
         }
         $lastModifiedTime = filemtime($this->filename);
-        $process = $this->startProcess();
         echo "Monitoring file: {$this->filename}  \n";
+        $process = $this->startProcess();
         while (true) {
             clearstatcache();
             $currentModifiedTime = filemtime($this->filename);
@@ -29,6 +29,7 @@ class PhpMon
                 $lastModifiedTime = $currentModifiedTime;
 
                 $process->stop();
+                echo "\n Server restarted at " . date('Y-m-d H:i:s') . "\n";
                 $process = $this->startProcess();
             }
             // Sleep for a short period to reduce CPU usage
@@ -37,7 +38,6 @@ class PhpMon
     }
     public function startProcess()
     {
-        echo "\n Server restarted at " . date('Y-m-d H:i:s') . "\n";
         $process = new Process(['php', $this->filename]);
         // $process->start();
         $process->run(function ($type, $buffer) {
