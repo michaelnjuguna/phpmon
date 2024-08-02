@@ -19,5 +19,6 @@
   "require": {
     "symfony/process": "^7.1",
     "symfony/filesystem": "^7.1"
-  }
+  },
+  "license": "MIT"
 }
