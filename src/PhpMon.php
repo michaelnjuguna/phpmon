@@ -21,6 +21,7 @@ class PhpMon
         }
         $lastModifiedTime = filemtime($this->filename);
         $process = $this->startProcess();
+        echo "Monitoring file: {$this->filename} . \n";
         while (true) {
             clearstatcache();
             $currentModifiedTime = filemtime($this->filename);
@@ -38,7 +39,14 @@ class PhpMon
     public function startProcess()
     {
         $process = new Process(['php', $this->filename]);
-        $process->start();
+        // $process->start();
+        $process->start(function ($type, $buffer) {
+            if (Process::ERR === $type) {
+                echo "Error: $buffer";
+            } else {
+                echo $buffer;
+            }
+        });
         return $process;
     }
 }
