@@ -1,0 +1,23 @@
+{
+  "name": "michaelnjuguna/phpmon",
+  "description": "A CLI tool to monitor and restart PHP applications",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "Michaelnjuguna\\Phpmon\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "michael njuguna",
+      "email": "michaelnjuguna184@gmail.com"
+    }
+  ],
+  "bin": [
+    "bin/phpmon"
+  ],
+  "require": {
+    "symfony/process": "^7.1",
+    "symfony/filesystem": "^7.1"
+  }
+}
