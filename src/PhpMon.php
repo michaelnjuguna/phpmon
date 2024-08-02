@@ -1,11 +1,11 @@
 <?php
 
-namespace PhpMon;
+namespace MichaelNjuguna\PhpMon;
 
 use Symfony\Component\Process\Process;
 use Symfony\Component\Filesystem\Filesystem;
 
-class Phpmon
+class PhpMon
 {
     private $filename;
     public function __construct($filename)

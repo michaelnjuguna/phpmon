@@ -4,9 +4,9 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use PhpMon\PhpMon;
+use MichaelNjuguna\PhpMon\PhpMon;
 
-if($argc<2){
+if ($argc < 2) {
     echo "Usage: phpmon <filename>n";
     exit(1);
 }
