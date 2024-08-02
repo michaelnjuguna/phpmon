@@ -15,7 +15,7 @@ class PhpMon
     public function run()
     {
         $filesystem = new Filesystem();
-        if (!!$filesystem->exists($this->filename)) {
+        if (!!$filesystem->exists($this->filename) === false) {
             echo "Error: File {$this->filename} does not exist.\n";
             exit(1);
         }
