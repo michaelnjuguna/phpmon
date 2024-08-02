@@ -31,6 +31,7 @@ class PhpMon
                 $process->stop();
                 echo "\n Server restarted at " . date('Y-m-d H:i:s') . "\n";
                 $process = $this->startProcess();
+                echo "\n Server restarted at " . date('Y-m-d H:i:s') . "\n";
             }
             // Sleep for a short period to reduce CPU usage
             usleep(500000);
