@@ -47,6 +47,6 @@ class PhpMon
                 echo $buffer;
             }
         });
-        // return $process;
+        return $process;
     }
 }
